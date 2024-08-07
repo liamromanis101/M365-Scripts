@@ -29,3 +29,9 @@ Requires subprocess, requests and json
 [pip install subprocess requests json]
 
 This script enumerates all user accounts using the graph users endpoint. It avoid Graph pagination issues are prints out all user accounts. 
+
+(get-users-privs.py)
+Requires subprocess, requests and json
+[pip install subprocess requests json]
+
+This script enumerates all users and then requests all role and group membership information for each user. 
