@@ -80,7 +80,6 @@ def main():
         "Risky Users": "https://graph.microsoft.com/v1.0/identityProtection/riskyUsers",
         "Managed Devices": "https://graph.microsoft.com/v1.0/deviceManagement/managedDevices",
         "Audit Logs": "https://graph.microsoft.com/v1.0/auditLogs/directoryAudits",
-        "Team Channels": "https://graph.microsoft.com/v1.0/teams/{team-id}/channels",  # Replace {team-id}
         "SharePoint Sites": "https://graph.microsoft.com/v1.0/sites",
         "Intune Device Configurations": "https://graph.microsoft.com/v1.0/deviceManagement/deviceConfigurations"
     }
