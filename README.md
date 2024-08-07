@@ -28,7 +28,7 @@ This script enumerates granted graph permissions by making requests to key graph
 Requires subprocess, requests and json
 [pip install subprocess requests json]
 
-This script enumerates all user accounts using the graph users endpoint. It avoid Graph pagination issues are prints out all user accounts. 
+This script enumerates all user accounts using the graph /users endpoint. It avoids Graph pagination issues and prints out all user accounts. 
 
 (get-users-privs.py)
 Requires subprocess, requests and json
