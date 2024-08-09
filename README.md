@@ -4,7 +4,7 @@ Collection of scripts for testing M365 subscriptions (& Azure). Most of these sc
 
 
 ## Legacy Services:
-(legacyservices.py)
+(legacyservices.py) - removed because of reasons.. will be back soon
 Requires requests and msal
 [pip install msal requests]
 
