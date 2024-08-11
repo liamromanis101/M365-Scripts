@@ -39,7 +39,7 @@ Requires subprocess, requests and json
 This script enumerates all users and then requests all role and group membership information for each user. 
 
 ## OAuth2 Token Theft
-()
+(oauth2-token-risky-scopes.py)
 Requires os, subprocess, json, requests
 [pip install os subprocess json requests]
 
