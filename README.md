@@ -37,3 +37,11 @@ Requires subprocess, requests and json
 [pip install subprocess requests json]
 
 This script enumerates all users and then requests all role and group membership information for each user. 
+
+## OAuth2 Token Theft
+()
+Requires os, subprocess, json, requests
+[pip install os subprocess json requests]
+
+This script analyzes OAuth2 permissions granted to applications within the tenant. The script helps identify potential risks associated with OAuth token theft by examining the permissions granted to applications, particularly those with overly permissive scopes.
+
