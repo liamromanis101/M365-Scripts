@@ -1,7 +1,7 @@
 # M365-Scripts
 Collection of scripts for testing M365 subscriptions (& Azure). Most of these scripts assume that access has been gained with a low privilege user account or that you are performing testing as a typical user where you do not have access to powershell. These scripts are intended for educational purposes or for authorized security assessments. 
 
-
+Please see: 
 
 ## Legacy Services:
 (legacyservices.py) - removed because of reasons.. will be back soon
