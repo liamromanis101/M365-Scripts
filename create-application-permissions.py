@@ -56,34 +56,51 @@ def get_current_user(access_token):
 
 # Step 4: Check if the user can create new applications
 def check_application_creation_permission(access_token):
-    perms = False
-    print("Checking application creation permissions...")
-    url = "https://graph.microsoft.com/v1.0/me"
+    # Verify if users can register applications directory-wide
+    print("Checking directory-wide setting for application registration...")
+    
+    org_url = "https://graph.microsoft.com/v1.0/organization"
     headers = {
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json"
     }
-    response = requests.get(url, headers=headers)
-    if response.status_code != 200:
-        print("Failed to retrieve user information:", response.text)
-        exit(1)
     
-    user_info = response.json()
-    print(f"User: {user_info['displayName']} ({user_info['userPrincipalName']})")
-        
-    # Check if user can create applications
-    url = "https://graph.microsoft.com/v1.0/applications"
-    response = requests.get(url, headers=headers)
-    if response.status_code == 403:
-        print("[-] User does not have permission to create applications.")
-    elif response.status_code == 200:
-        print("[+] User has permission to create applications.")
-        perms = True
+    # Perform the request to get organization settings
+    org_response = requests.get(org_url, headers=headers)
+    
+    if org_response.status_code == 200:
+        org_info = org_response.json()
+        can_register_apps = org_info.get('value', [{}])[0].get('settings', {}).get('usersCanRegisterApps', False)
+        if not can_register_apps:
+            print("Users are not allowed to register applications in this directory.")
+            return False
     else:
-        print("[!] Unexpected response:", response.status_code, response.text)
+        print(f"Error retrieving organization settings: {org_response.status_code} {org_response.text}")
+        return None
 
-    return perms
+    # Test creating a new application
+    print("Attempting to create a dummy application...")
+    app_url = "https://graph.microsoft.com/v1.0/applications"
+    dummy_app_payload = {
+        "displayName": "DummyAppForTesting",
+        "signInAudience": "AzureADMyOrg"
+    }
     
+    # Perform the request to create a new application
+    create_response = requests.post(app_url, headers=headers, json=dummy_app_payload)
+    
+    if create_response.status_code == 403:
+        print("[-] User does not have permission to create applications.")
+        return False
+    elif create_response.status_code == 201:
+        print("[+] User has permission to create applications.")
+        # Optionally delete the dummy application after checking
+        app_id = create_response.json().get('id')
+        print(f"Dummy application created with ID: {app_id}")
+        return True
+    else:
+        print(f"[!] Unexpected response: {create_response.status_code} {create_response.text}")
+        return False
     
     
     
