@@ -46,3 +46,9 @@ Requires os, subprocess, json, requests
 This script analyzes OAuth2 permissions granted to applications within the tenant. The script helps identify potential risks associated with OAuth token theft by examining the permissions granted to applications, particularly those with overly permissive scopes.
 
 For further information on overly permissive scope please see: https://github.com/liamromanis101/M365-Scripts/blob/main/SCOPES.md
+
+(create-application-permissions.py)
+Requires subprocess, json, requests
+[pip install subprocess json requests]
+
+This script determines whether the user account can create new applications. If new applications can be created the script attempts to discover what configuration aspects could block a threat actor performing a malicious application consent phishing attack. 
