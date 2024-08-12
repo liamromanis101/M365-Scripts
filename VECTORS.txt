@@ -1,0 +1,69 @@
+1. Compromised Administrative Accounts
+
+	•	Phishing: Targeted phishing attacks can trick administrators into revealing their credentials, leading to unauthorized access.
+	•	Password Spray Attacks: Attackers use commonly used passwords across a large number of accounts to identify weakly protected administrator accounts.
+	•	Credential Stuffing: Using credentials obtained from breaches in other services to attempt to log in to Microsoft 365 accounts.
+
+2. Malicious Application Consents (OAuth Token Theft)
+
+	•	Consent Phishing: Attackers create malicious apps and trick users (including admins) into granting excessive permissions, which can be used to perform privileged actions.
+	•	Token Replay: Capturing OAuth tokens to impersonate a user or escalate privileges by accessing APIs with the token.
+
+3. Misconfigured Privileged Access Management (PAM)
+
+	•	Over-permissioned Accounts: Accounts with more privileges than necessary can be exploited if compromised.
+	•	Misconfigured Access Policies: Incorrectly configured PAM policies or lack of enforcement can allow unauthorized privilege escalation.
+
+4. Guest User Permissions
+
+	•	Over-permissioned Guest Users: External users (guests) with excessive permissions can be used as a stepping stone for privilege escalation.
+
+5. Exploiting Legacy Authentication Protocols
+
+	•	Older Protocols: Legacy protocols like SMTP, IMAP, POP3 may not support modern authentication, making it easier to bypass multi-factor authentication (MFA) and gain privileged access.
+
+6. Vulnerabilities in Azure AD Conditional Access Policies
+
+	•	Weak or Misconfigured Policies: Incorrectly implemented Conditional Access policies can be exploited to bypass MFA or other security controls, leading to privilege escalation.
+
+7. Abuse of Delegated Permissions
+
+	•	App Permissions Misuse: Applications granted delegated permissions by users or administrators can be abused to act on behalf of users with elevated privileges.
+
+8. Weak MFA or MFA Fatigue Attacks
+
+	•	Poorly Implemented MFA: If MFA is not enforced for all users, or if weak MFA methods are used, attackers can bypass this security measure.
+	•	MFA Fatigue: Repeated MFA requests can lead users to approve fraudulent authentication attempts.
+
+9. Exploitation of Service Principal or Managed Identity Misconfigurations
+
+	•	Over-permissioned Service Principals: Service principals with excessive permissions can be compromised to escalate privileges.
+	•	Managed Identity Misconfigurations: Poorly configured managed identities in Azure services can be exploited to gain elevated access.
+
+10. Abuse of Admin Consent Workflows
+
+	•	Admin Consent Grants: Exploiting the admin consent process to grant malicious applications broad access within the tenant.
+
+11. Data Leaks Leading to Credential Exposure
+
+	•	Logs and Data Storage: Logs, email attachments, or documents stored insecurely in SharePoint, OneDrive, or other services may contain sensitive credentials or information that can be leveraged for privilege escalation.
+
+12. Insider Threats
+
+	•	Malicious Insiders: Employees with legitimate access may escalate privileges through social engineering or exploiting their access for unauthorized purposes.
+
+13. Abuse of Azure AD Roles and Role-Based Access Control (RBAC)
+
+	•	Role Elevation: Users with the ability to assign roles may escalate their own privileges or the privileges of others within Azure AD or Microsoft 365.
+	•	Role Assignment Exploits: Misconfigured role assignments can allow users to gain higher privileges than intended.
+
+14. Inactive or Unmonitored Accounts
+
+	•	Dormant Accounts: Accounts that are no longer actively used but retain administrative privileges can be a vector for privilege escalation if compromised.
+
+15. Abuse of Conditional Access Exceptions
+
+	•	Bypass Using Trusted Locations: Conditional Access policies might be bypassed if the attacker’s IP falls within a trusted range.
+	•	Device Compliance Policies: Exploiting poorly configured device compliance policies to access resources that should require more stringent checks.
+
+Mitigating these risks involves implementing a robust security framework, including enforcing MFA, regularly auditing permissions, using Privileged Identity Management (PIM), and monitoring for suspicious activities.
