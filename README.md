@@ -45,4 +45,4 @@ Requires os, subprocess, json, requests
 
 This script analyzes OAuth2 permissions granted to applications within the tenant. The script helps identify potential risks associated with OAuth token theft by examining the permissions granted to applications, particularly those with overly permissive scopes.
 
-For further information on overly permissive scope please see: https://github.com/liamromanis101/M365-Scripts/SCOPES.md
+For further information on overly permissive scope please see: https://github.com/liamromanis101/M365-Scripts/blob/main/SCOPES.md
