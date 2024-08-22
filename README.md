@@ -4,7 +4,7 @@ Collection of scripts for testing M365 subscriptions (& Azure). Most of these sc
 For a brief on common attack vectors, please see: https://github.com/liamromanis101/M365-Scripts/blob/main/VECTORS.txt
 
 ## Legacy Services:
-(legacyservices.py) - removed because of reasons.. will be back soon
+(legacyservices.py) - [alpha, more functionality to be added]
 Requires requests and msal
 [pip install msal requests]
 
